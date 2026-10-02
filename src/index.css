@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 15% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 12% 9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 12% 9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 158 64% 48%; /* Emerald green */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 158 64% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 10% 18%;
+    --input: 220 10% 15%;
+    --ring: 158 64% 48%;
+
+    --radius: 0.875rem;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0c0d0e;
+    color: #f4f4f5;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.3);
+    color: #ffffff;
+  }
+}
+
+@layer components {
+  .app-card {
+    @apply bg-[#141518] border border-[#27292e] rounded-2xl shadow-xl transition-all;
+  }
+
+  .app-input {
+    @apply bg-[#1a1c20] border border-[#2c2f35] text-white placeholder:text-zinc-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all;
+  }
+
+  .app-pill {
+    @apply px-3.5 py-1.5 rounded-lg text-xs font-medium border transition-all;
+  }
+
+  .app-pill-active {
+    @apply bg-emerald-500/15 border-emerald-500/50 text-emerald-400 font-semibold shadow-sm;
+  }
+
+  .app-pill-inactive {
+    @apply bg-[#181a1d] border-[#27292e] text-zinc-400 hover:text-white hover:bg-[#202226];
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27292e;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
